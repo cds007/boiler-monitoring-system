@@ -102,6 +102,16 @@ const loadRatios = [100, 75, 50, 25];
 const selectedLoadRatio = ref(100);
 const isLoading = ref(false);
 
+// 在script部分导入图片
+import cloud100 from './assets/images/cloud_100.png';
+import cloud75 from './assets/images/cloud_75.png';
+import cloud50 from './assets/images/cloud_50.png';
+import cloud25 from './assets/images/cloud_25.png';
+import line100 from './assets/images/line_100.png';
+import line75 from './assets/images/line_75.png';
+import line50 from './assets/images/line_50.png';
+import line25 from './assets/images/line_25.png';
+
 // 处理负荷比例变化
 const handleLoadRatioChange = async (newRatio) => {
   isLoading.value = true;
@@ -113,32 +123,22 @@ const handleLoadRatioChange = async (newRatio) => {
 // 获取云图路径
 const getCloudImagePath = () => {
   switch (selectedLoadRatio.value) {
-    case 100:
-      return '/src/assets/images/cloud_100.png';
-    case 75:
-      return '/src/assets/images/cloud_75.png';
-    case 50:
-      return '/src/assets/images/cloud_50.png';
-    case 25:
-      return '/src/assets/images/cloud_25.png';
-    default:
-      return '/src/assets/images/cloud_100.png';
+    case 100: return cloud100;
+    case 75: return cloud75;
+    case 50: return cloud50;
+    case 25: return cloud25;
+    default: return cloud100;
   }
 };
 
 // 获取折线图路径
 const getLineImagePath = () => {
   switch (selectedLoadRatio.value) {
-    case 100:
-      return '/src/assets/images/line_100.png';
-    case 75:
-      return '/src/assets/images/line_75.png';
-    case 50:
-      return '/src/assets/images/line_50.png';
-    case 25:
-      return '/src/assets/images/line_25.png';
-    default:
-      return '/src/assets/images/line_100.png';
+    case 100: return line100;
+    case 75: return line75;
+    case 50: return line50;
+    case 25: return line25;
+    default: return line100;
   }
 };
 </script>
